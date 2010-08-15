@@ -9,8 +9,9 @@ Gem::Specification.new do |s|
   s.summary     = "let your Gemfile do the configuring"
   s.description = "Haml-rails provides Haml generators for Rails 3. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah."
 
-  s.required_rubygems_version = ">= 1.3.6"
   s.rubyforge_project         = "haml-rails"
+  s.required_rubygems_version = ">= 1.3.6"
+  s.add_development_dependency "bundler", ">= 1.0.0.rc.6.pre"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
