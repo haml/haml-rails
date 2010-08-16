@@ -1,7 +1,9 @@
 # -*- encoding: utf-8 -*-
+require File.expand_path("../lib/haml-rails/version", __FILE__)
+
 Gem::Specification.new do |s|
   s.name        = "haml-rails"
-  s.version     = "0.1"
+  s.version     = Haml::Rails::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["André Arko"]
   s.email       = ["andre@arko.net"]
