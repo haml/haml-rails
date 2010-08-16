@@ -9,3 +9,7 @@ To use it, add this line to your Gemfile:
 Pretty fancy, eh?
 
 Once you've done that, any time you generate a controller or scaffold, you'll get Haml instead of ERB templates. On top of that, when your Rails application loads, Haml will be loaded and initialized completely automatically! The modern world is just so amazing.
+
+### Contributors
+
+Haml generators originally from [rails3-generators](http://github.com/indirect/rails3-generators), and written by Paul Barry, Anuj Dutta, Louis T, and Chris Rhoden.
