@@ -13,7 +13,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project         = "haml-rails"
   s.required_rubygems_version = ">= 1.3.6"
-  s.add_development_dependency "bundler", ">= 1.0.0.rc.6.pre"
+
+  s.add_dependency "rails", "~>3.0.0.rc"
+  s.add_development_dependency "bundler", ">= 1.0.0.rc.6"
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
