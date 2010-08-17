@@ -12,4 +12,4 @@ Once you've done that, any time you generate a controller or scaffold, you'll ge
 
 ### Contributors
 
-Haml generators originally from [rails3-generators](http://github.com/indirect/rails3-generators), and written by Paul Barry, Anuj Dutta, Louis T, and Chris Rhoden.
+Haml generators originally from [rails3-generators](http://github.com/indirect/rails3-generators), and written by Paul Barry, Anuj Dutta, Louis T, and Chris Rhoden. Tests originally written by Louis T.
