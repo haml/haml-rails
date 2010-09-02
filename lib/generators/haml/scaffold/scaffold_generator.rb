@@ -7,10 +7,7 @@ module Haml
       extend TemplatePath
 
       def copy_view_files
-        views = available_views
-        views.delete("index") if options[:singleton]
-
-        views.each do |view|
+        available_views.each do |view|
           filename = filename_with_extensions(view)
           template template_filename_with_extensions(view), File.join("app/views", controller_file_path, filename)
         end
