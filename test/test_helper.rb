@@ -1,5 +1,4 @@
 require 'rubygems'
-gem 'test-unit'
 require 'test/unit'
 require 'rails/all'
 require 'rails/generators'
@@ -46,8 +45,8 @@ end
 
 def generator_list
   {
-    :rails        => ['scaffold', 'controller'],
-    :haml         => ['scaffold', 'controller']
+    :rails        => ['scaffold', 'controller', 'mailer'],
+    :haml         => ['scaffold', 'controller', 'mailer']
   }
 end
 
@@ -63,7 +62,11 @@ end
 def require_generators(generator_list)
   generator_list.each do |name, generators|
     generators.each do |generator_name|
-      require File.join(path_prefix(name), name.to_s, generator_name.to_s, "#{generator_name}_generator")
+      if name.to_s == 'rails' && generator_name.to_s == 'mailer'
+        require File.join(path_prefix(name), generator_name.to_s, "#{generator_name}_generator")
+      else
+        require File.join(path_prefix(name), name.to_s, generator_name.to_s, "#{generator_name}_generator")
+      end
     end
   end
 end
