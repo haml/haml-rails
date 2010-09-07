@@ -1,1 +1,1 @@
-require_generators :haml => ['scaffold', 'controller']
+require_generators :haml => ['scaffold', 'controller', 'mailer']
