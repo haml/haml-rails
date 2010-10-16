@@ -4,7 +4,11 @@ require 'rails'
 module Haml
   module Rails
     class Railtie < ::Rails::Railtie
-      config.generators.template_engine :haml
+      if ::Rails.version.to_f >= 3.1
+        config.app_generators.template_engine :haml
+      else
+        config.generators.template_engine :haml
+      end
 
       config.before_initialize do
         Haml.init_rails(binding)
