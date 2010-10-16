@@ -15,9 +15,9 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.3.6"
 
   s.add_dependency "haml",          "~> 3.0.18"
-  s.add_dependency "activesupport", "~> 3.0.0"
-  s.add_dependency "actionpack",    "~> 3.0.0"
-  s.add_dependency "railties",      "~> 3.0.0"
+  s.add_dependency "activesupport", "~> 3.0"
+  s.add_dependency "actionpack",    "~> 3.0"
+  s.add_dependency "railties",      "~> 3.0"
 
   s.add_development_dependency "rails",   "~> 3.0"
   s.add_development_dependency "bundler", "~> 1.0.0"
