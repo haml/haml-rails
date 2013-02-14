@@ -14,6 +14,10 @@ Once you've done that, any time you generate a controller or scaffold, you'll ge
 
 Haml generators originally from [rails3-generators](http://github.com/indirect/rails3-generators), and written by José Valim, André Arko, Paul Barry, Anuj Dutta, Louis T, and Chris Rhoden. Tests originally written by Louis T.
 
+### Code Status
+
+[![Build Status](https://travis-ci.org/indirect/haml-rails.png)](https://travis-ci.org/indirect/haml-rails)
+
 ### License
 
 Ruby license or MIT license, take your pick.
