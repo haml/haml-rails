@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "railties",      [">= 3.1", "< 4.1"]
 
   s.add_development_dependency "rails",   [">= 3.1", "< 4.1"]
-  s.add_development_dependency "bundler", "~> 1.2"
+  s.add_development_dependency "bundler", ">= 1.2"
   s.add_development_dependency "rake"
 
   s.files        = `git ls-files`.split("\n")
