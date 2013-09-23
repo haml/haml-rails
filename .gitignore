@@ -1,3 +1,5 @@
 *.gem
 .bundle/
+*.lock
+gemfiles/*.lock
 tmp/
