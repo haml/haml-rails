@@ -6,9 +6,12 @@ To use it, add this line to your Gemfile:
 
     gem "haml-rails"
 
-Pretty fancy, eh?
+This ensures that:
+  * Any time you generate a controller or scaffold, you'll get Haml templates (instead of ERB)
+  * When your Rails application loads, Haml will be loaded and initialized automatically
+  * Haml templates will be respected by the view template cache digestor
 
-Once you've done that, any time you generate a controller or scaffold, you'll get Haml instead of ERB templates. On top of that, when your Rails application loads, Haml will be loaded and initialized completely automatically! The modern world is just so amazing.
+Pretty fancy, eh? The modern world is just so amazing.
 
 ### Contributors
 
