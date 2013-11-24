@@ -43,7 +43,11 @@ module Haml
                   # https://github.com/rails/rails/pull/10791
                   class BlackHole < Hash
                     def []=(*); end
+                    def put_if_absent(*); end
+                    def fetch(*); yield; end
+                    def delete_pair(*); end
                   end
+
                   module ::ActionView
                     class Digestor
                       @@cache = BlackHole.new
