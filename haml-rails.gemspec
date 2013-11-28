@@ -15,12 +15,12 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "haml-rails"
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency "haml",          [">= 3.1", "< 4.1"]
-  s.add_dependency "activesupport", [">= 3.1", "< 4.1"]
-  s.add_dependency "actionpack",    [">= 3.1", "< 4.1"]
-  s.add_dependency "railties",      [">= 3.1", "< 4.1"]
+  s.add_dependency "haml",          [">= 3.1", "< 5.0"]
+  s.add_dependency "activesupport", ["~> 4.0.0"]
+  s.add_dependency "actionpack",    ["~> 4.0.0"]
+  s.add_dependency "railties",      ["~> 4.0.0"]
 
-  s.add_development_dependency "rails",   [">= 3.1", "< 4.1"]
+  s.add_development_dependency "rails",   ["~> 4.0.0"]
   s.add_development_dependency "bundler", "~> 1.2"
   s.add_development_dependency "rake"
   s.add_development_dependency 'appraisal', '>= 0.3.8'
