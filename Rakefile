@@ -1,7 +1,10 @@
 require 'bundler'
 Bundler::GemHelper.install_tasks
 
-require 'appraisal'
+begin
+  require 'appraisal'
+rescue LoadError
+end
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
