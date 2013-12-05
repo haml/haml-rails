@@ -34,7 +34,7 @@ module Haml
                 # will only apply if Rails 4, which includes 'action_view/dependency_tracker'
                 require 'action_view/dependency_tracker'
                 ActionView::DependencyTracker.register_tracker :haml, ActionView::DependencyTracker::ERBTracker
-                ActionView::Digestor.cache = ActiveSupport::Cache::NullStore.new if ::Rails.env.development?
+                ActionView::Base.cache_template_loading = false if ::Rails.env.development?
               end
             rescue
               # likely this version of Rails doesn't support dependency tracking
