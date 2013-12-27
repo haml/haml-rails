@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'test/unit'
+require 'minitest/autorun'
 require 'rails/all'
 require 'rails/generators'
 require 'rails/generators/test_case'
