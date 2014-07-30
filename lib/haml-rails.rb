@@ -1,5 +1,6 @@
 require 'haml'
 require 'rails'
+require 'haml/railtie'
 
 module Haml
   module Rails
