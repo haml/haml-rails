@@ -5,3 +5,4 @@ gemspec
 
 gem 'rubysl', '~> 2.0', platforms: :rbx
 gem 'minitest', platforms: :rbx
+gem 'html2haml'
