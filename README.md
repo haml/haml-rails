@@ -13,6 +13,18 @@ This ensures that:
 
 Pretty fancy, eh? The modern world is just so amazing.
 
+### Converting Rails application layout file to haml format
+
+Once Haml-rails is installed on the Rails application,
+you can convert the erb layout file, `app/views/layouts/application.html.erb`
+to `app/views/layouts/application.html.haml` using this command:
+
+    $ rails generate haml:application_layout convert
+
+After the application layout file is converted successfully,
+make sure to delete `app/views/layouts/application.html.erb`, so Rails can
+start using `app/views/layouts/application.html.haml` instead.
+
 ### Older versions of Rails
 
 The current version of Haml-rails requires 4.0.1 or later.
