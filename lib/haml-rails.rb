@@ -44,6 +44,13 @@ module Haml
           end
         end
       end
+
+      initializer 'haml_rails.configure_source_annotation' do
+        # Configure source annoatation on haml files
+        SourceAnnotationExtractor::Annotation.register_extensions('haml') do |tag|
+          /\s*-#\s*(#{tag}):?\s*(.*)/
+        end
+      end
     end
   end
 end
