@@ -45,11 +45,10 @@ module Haml
         end
       end
 
-      initializer 'haml_rails.configure_source_annotation' do
-        # Configure source annoatation on haml files
-
-        # HAML support existed in Rails 3.2, 4.0, and 4.1, but was dropped in 4.2
-        if ::Rails.version >= '4.2'
+      # Configure source annoatation on haml files (support for HAML was
+      # provided directly by railties 3.2..4.1 but was dropped in 4.2.
+      if ::Rails.version.to_s >= '4.2'
+        initializer 'haml_rails.configure_source_annotation' do
           SourceAnnotationExtractor::Annotation.register_extensions('haml') do |tag|
             /\s*-#\s*(#{tag}):?\s*(.*)/
           end
