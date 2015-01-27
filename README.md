@@ -25,6 +25,18 @@ After the application layout file is converted successfully,
 make sure to delete `app/views/layouts/application.html.erb`, so Rails can
 start using `app/views/layouts/application.html.haml` instead.
 
+### Converting all .erb views to haml format
+
+If you want to convert all of your .erb views into .haml, you can do so using the following command:
+
+    $ rake haml:erb2haml
+
+If you already have .haml files for one or more of the .erb files, the rake task will give you the option of either
+replacing these .haml files or leaving them in place.
+
+Once the task is complete, you will have the option of deleting the original .erb files. Unless you are under
+version control, it is recommended that you decline this option.
+
 ### Older versions of Rails
 
 The current version of Haml-rails requires 4.0.1 or later.
