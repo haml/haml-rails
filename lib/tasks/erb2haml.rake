@@ -1,7 +1,7 @@
 namespace :haml do
+  
+  desc 'Convert html.erb to html.haml each file in app/views'
   task :erb_2_haml do
-
-    puts "This task will generate a .html.haml translation of each of the  .html.erb files in app/views and its subdirectories."
 
     erb_files = Dir.glob('app/views/**/*.erb').select { |f| File.file? f}
     haml_files = Dir.glob('app/views/**/*.haml').select { |f| File.file? f}
