@@ -1,5 +1,5 @@
 namespace :haml do
-  task :erb_2_haml do
+  task :erb2haml do
 
     puts "This task will generate a .html.haml translation of each of the  .html.erb files in app/views and its subdirectories."
 
