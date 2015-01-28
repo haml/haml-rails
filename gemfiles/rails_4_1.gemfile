@@ -2,9 +2,9 @@
 
 source "https://rubygems.org"
 
-gem "rails", "4.1.0.beta1"
+gem "rubysl", "~> 2.0", :platforms => :rbx
+gem "minitest", :platforms => :rbx
+gem "html2haml"
+gem "rails", "4.1"
 
-gem 'rubysl', '~> 2.0', platforms: :rbx
-gem 'minitest', platforms: :rbx
-
-gemspec :path=>"../"
+gemspec :path => "../"
