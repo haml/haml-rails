@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "haml-rails"
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency "haml",          [">= 3.1", "< 5.0"]
+  s.add_dependency "haml",          [">= 4.0.6", "< 5.0"]
   s.add_dependency "activesupport", [">= 4.0.1"]
   s.add_dependency "actionpack",    [">= 4.0.1"]
   s.add_dependency "railties",      [">= 4.0.1"]
