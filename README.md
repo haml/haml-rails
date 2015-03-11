@@ -4,10 +4,11 @@ Haml-rails provides Haml generators for Rails 4. It also enables Haml as the tem
 
 To use it, add this line to your Gemfile:
 
-    gem "haml-rails", "~> 0.8"
+    gem "haml-rails", "~> 0.9"
 
 This ensures that:
-  * Any time you generate a controller or scaffold, you'll get Haml templates (instead of ERB)
+
+  * Any time you generate a resource, view, or mailer, you'll get Haml templates (instead of ERB)
   * When your Rails application loads, Haml will be loaded and initialized automatically
   * Haml templates will be respected by the view template cache digestor
 
