@@ -42,7 +42,7 @@ module Haml
         end
       end
 
-      # Configure source annoatation on haml files (support for HAML was
+      # Configure source annotation on haml files (support for HAML was
       # provided directly by railties 3.2..4.1 but was dropped in 4.2.
       if Gem::Requirement.new(">= 4.2").satisfied_by?(Gem::Version.new(::Rails.version))
         initializer 'haml_rails.configure_source_annotation' do
