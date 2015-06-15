@@ -4,4 +4,3 @@
 gemfiles/*.lock
 tmp/
 /vendor/bundle
-*.swp
