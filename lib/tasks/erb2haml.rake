@@ -64,7 +64,7 @@ namespace :haml do
 
     if should_delete == 'y'
       puts "Deleting original .erb files."
-      File.delete *erb_files
+      File.delete(*erb_files)
     else
       puts "Please remember to delete your .erb files once you have ensured they were translated correctly."
     end
