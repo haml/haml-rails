@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'appraisal', '~> 1.0'
 
   s.files        = `git ls-files`.split("\n")
-  s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
+  # s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
+  s.executables  = ['hamlify']
   s.require_path = 'lib'
 end
