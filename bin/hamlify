@@ -2,8 +2,6 @@
 
 require 'haml-rails'
 
-raise 'Must be in a Rails app directory' unless File.file('bin/rails')
+system `rails generate haml:application_layout convert`
 
-`rails generate haml:application_layout convert`
-
-`rake haml:erb2haml`
+system `rake haml:erb2haml`
