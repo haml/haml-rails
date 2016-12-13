@@ -1,0 +1,7 @@
+test:
+  override:
+    - gem list
+    - rake
+    - bundle exec rake
+    - which rake
+    - bundle exec which rake
