@@ -11,6 +11,7 @@ module Haml
 
       config.before_initialize do
         Haml::Template.options[:format] = :html5
+        Haml::Template.options[:ugly] = true
       end
 
       initializer 'haml_rails.configure_template_digestor' do
