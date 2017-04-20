@@ -52,7 +52,7 @@ Haml generators originally from [rails3-generators](http://github.com/indirect/r
 
 ### Code Status
 
-[![Build Status](https://travis-ci.org/indirect/haml-rails.png)](https://travis-ci.org/indirect/haml-rails)
+[![Build Status](https://travis-ci.org/indirect/haml-rails.svg)](https://travis-ci.org/indirect/haml-rails)
 
 ### License
 
