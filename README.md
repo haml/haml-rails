@@ -1,4 +1,5 @@
 # Haml-rails
+[![Build Status](https://travis-ci.org/indirect/haml-rails.svg)](https://travis-ci.org/indirect/haml-rails)
 
 Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
@@ -49,10 +50,6 @@ Haml-rails version 0.4 is the last version to support Rails 3. To use it, add th
 ### Contributors
 
 Haml generators originally from [rails3-generators](http://github.com/indirect/rails3-generators), and written by José Valim, André Arko, Paul Barry, Anuj Dutta, Louis T, and Chris Rhoden. Tests originally written by Louis T.
-
-### Code Status
-
-[![Build Status](https://travis-ci.org/indirect/haml-rails.svg)](https://travis-ci.org/indirect/haml-rails)
 
 ### License
 
