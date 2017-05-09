@@ -11,6 +11,7 @@ rvm:
   - 1.9.3
   - jruby-19mode
 gemfile:
+  - gemfiles/rails_5_1.gemfile
   - gemfiles/rails_5_0.gemfile
   - gemfiles/rails_4_2.gemfile
   - gemfiles/rails_4_1.gemfile
@@ -18,13 +19,21 @@ gemfile:
 matrix:
   exclude:
     - rvm: 2.1
+      gemfile: gemfiles/rails_5_1.gemfile
+    - rvm: 2.1
       gemfile: gemfiles/rails_5_0.gemfile
+    - rvm: 2.0
+      gemfile: gemfiles/rails_5_1.gemfile
     - rvm: 2.0
       gemfile: gemfiles/rails_5_0.gemfile
     - rvm: 1.9.3
-      gemfile: gemfiles/rails_5_0.gemfile
-    - rvm: jruby-19mode
+      gemfile: gemfiles/rails_5_1.gemfile
+    - rvm: 1.9.3
       gemfile: gemfiles/rails_5_0.gemfile
     - rvm: 1.9.3
       gemfile: gemfiles/rails_4_1.gemfile
+    - rvm: jruby-19mode
+      gemfile: gemfiles/rails_5_1.gemfile
+    - rvm: jruby-19mode
+      gemfile: gemfiles/rails_5_0.gemfile
 script: "bundle exec rake test"
