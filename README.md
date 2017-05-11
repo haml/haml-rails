@@ -31,7 +31,7 @@ start using `app/views/layouts/application.html.haml` instead.
 
 If you want to convert all of your .erb views into .haml, you can do so using the following command:
 
-    $ rake haml:erb2haml
+    $ rake haml:erb_2_haml
 
 If you already have .haml files for one or more of the .erb files, the rake task will give you the option of either
 replacing these .haml files or leaving them in place.
