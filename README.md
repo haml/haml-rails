@@ -47,6 +47,17 @@ Haml-rails version 0.4 is the last version to support Rails 3. To use it, add th
 
     gem "haml-rails", "~> 0.4.0"
 
+### Deprecation Warning
+
+rails moved to a [new ERB handler](https://github.com/rails/rails/issues/28330), and so should you if you find deprecation warnings annoy you. If you are getting the deprecation warning:  
+```
+ActionView::Template::Handlers::Erubis is deprecated and will be removed from Rails 5.2. Switch to ActionView::Template::Handlers::ERB::Erubi instead.
+```
+
+You need to use [v1.0.0](https://github.com/troystarwalt/haml-rails/releases/tag/v1.0.0) which includes support for haml 5.0.
+
+Update your Gemfile to `gem "haml-rails", "~> 1.0"` and `bundle install`.
+
 ### Contributors
 
 Haml generators originally from [rails3-generators](http://github.com/indirect/rails3-generators), and written by José Valim, André Arko, Paul Barry, Anuj Dutta, Louis T, and Chris Rhoden. Tests originally written by Louis T.
