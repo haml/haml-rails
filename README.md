@@ -37,7 +37,13 @@ If you already have .haml files for one or more of the .erb files, the rake task
 replacing these .haml files or leaving them in place.
 
 Once the task is complete, you will have the option of deleting the original .erb files. Unless you are under
-version control, it is recommended that you decline this option.
+version control, it is recommended that you decline this option.  If you are running in a script, you can use
+an environment variable to answer this question.
+
+    $ HAML_RAILS_DELETE_ERB=true rake haml:erb2haml
+
+Running the above will not prompt for the question and will delete the original .erb files.  Setting this value to
+false will also not prompt, however, will leave the .erb files intact.
 
 ### Older versions of Rails
 

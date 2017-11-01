@@ -58,8 +58,12 @@ namespace :haml do
 
     puts '-'*80
     begin
-      puts 'Would you like to delete the original .erb files? (This is not recommended unless you are under version control.) (y/n)'
-      should_delete = STDIN.gets.chomp.downcase[0]
+      if ENV.has_key?("HAML_RAILS_DELETE_ERB")
+        should_delete = ENV["HAML_RAILS_DELETE_ERB"] == "true" ? "y" : "n"
+      else
+        puts 'Would you like to delete the original .erb files? (This is not recommended unless you are under version control.) (y/n)'
+        should_delete = STDIN.gets.chomp.downcase[0]
+      end
     end until ['y', 'n'].include?(should_delete)
 
     if should_delete == 'y'
