@@ -1,4 +1,8 @@
+<% if Rails::VERSION::MAJOR >= 5 && Rails::VERSION::MINOR >= 1 -%>
+= form_with model: @<%= singular_table_name %>, local: true do |f|
+<% else -%>
 = form_for @<%= singular_table_name %> do |f|
+<% end -%>
   - if @<%= singular_table_name %>.errors.any?
     #error_explanation
       %h2= "#{pluralize(@<%= singular_table_name %>.errors.count, "error")} prohibited this <%= singular_table_name %> from being saved:"
