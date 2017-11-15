@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 require 'rails/generators/rails/controller/controller_generator'
 require 'generators/haml/controller/controller_generator'

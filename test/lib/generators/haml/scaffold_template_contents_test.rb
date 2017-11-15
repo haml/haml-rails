@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 require 'rails/generators/rails/scaffold/scaffold_generator'
 require 'generators/haml/scaffold/scaffold_generator'

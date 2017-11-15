@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails/generators/erb/controller/controller_generator'
 
 module Haml
