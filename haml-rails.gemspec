@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["André Arko"]
   s.email       = ["andre@arko.net"]
-  s.homepage    = "http://github.com/indirect/haml-rails"
+  s.homepage    = "https://github.com/indirect/haml-rails"
   s.summary     = "let your Gemfile do the configuring"
   s.description = "Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah."
   s.licenses    = ["MIT"]
