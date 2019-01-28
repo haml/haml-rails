@@ -47,6 +47,7 @@ module Haml
       if Gem::Requirement.new(">= 4.2").satisfied_by?(Gem::Version.new(::Rails.version))
         initializer 'haml_rails.configure_source_annotation' do
           annotation_class = if ::Rails::VERSION::STRING >= '6.0'
+            require 'rails/source_annotation_extractor'
             ::Rails::SourceAnnotationExtractor::Annotation
           else
             ::SourceAnnotationExtractor::Annotation
