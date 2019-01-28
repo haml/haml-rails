@@ -73,7 +73,7 @@ alias :require_generator :require_generators
 require_generators generator_list
 
 # Remove tmp directory when test suite is completed
-MiniTest::Unit.after_tests do
+MiniTest.after_run do
   tmp_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp'))
   FileUtils.rm_r(tmp_dir)
 end
