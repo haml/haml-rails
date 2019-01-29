@@ -11,4 +11,12 @@ rvm:
   - jruby
 gemfile:
   - gemfiles/rails_5_1.gemfile
+  - gemfiles/rails_5_2.gemfile
+  - gemfiles/rails_6.beta1.gemfile
+matrix:
+  exclude:
+    - rvm: 2.3.6
+      gemfile: gemfiles/rails_6.beta1.gemfile
+    - rvm: 2.4.3
+      gemfile: gemfiles/rails_6.beta1.gemfile
 script: "bundle exec rake test"
