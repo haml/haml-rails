@@ -31,7 +31,7 @@ start using `app/views/layouts/application.html.haml` instead.
 
 If you want to convert all of your .erb views into .haml, you can do so using the following command:
 
-    $ rake haml:erb2haml
+    $ rails haml:erb2haml
 
 If you already have .haml files for one or more of the .erb files, the rake task will give you the option of either
 replacing these .haml files or leaving them in place.
@@ -40,7 +40,7 @@ Once the task is complete, you will have the option of deleting the original .er
 version control, it is recommended that you decline this option.  If you are running in a script, you can use
 an environment variable to answer this question.
 
-    $ HAML_RAILS_DELETE_ERB=true rake haml:erb2haml
+    $ HAML_RAILS_DELETE_ERB=true rails haml:erb2haml
 
 Running the above will not prompt for the question and will delete the original .erb files.  Setting this value to
 false will also not prompt, however, will leave the .erb files intact.
