@@ -13,16 +13,17 @@ Gem::Specification.new do |s|
   s.licenses    = ["MIT"]
 
   s.rubyforge_project         = "haml-rails"
-  s.required_rubygems_version = ">= 1.3.6"
+  s.required_rubygems_version = ">= 3.0.0"
+  s.required_ruby_version     = ">= 2.3.0"
 
   s.add_dependency "haml",          [">= 4.0.6", "< 6.0"]
-  s.add_dependency "activesupport", [">= 4.0.1"]
-  s.add_dependency "actionpack",    [">= 4.0.1"]
-  s.add_dependency "railties",      [">= 4.0.1"]
+  s.add_dependency "activesupport", [">= 5.1"]
+  s.add_dependency "actionpack",    [">= 5.1"]
+  s.add_dependency "railties",      [">= 5.1"]
   s.add_dependency "html2haml",     [">= 1.0.1"]
 
-  s.add_development_dependency "rails",   [">= 4.0.1"]
-  s.add_development_dependency "bundler", ">= 1.7"
+  s.add_development_dependency "rails",   [">= 5.1"]
+  s.add_development_dependency "bundler", "~> 2.0"
   s.add_development_dependency "rake"
   s.add_development_dependency 'appraisal', '~> 1.0'
 
