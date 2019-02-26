@@ -39,8 +39,7 @@ namespace :haml do
 
         if erb_files.empty?
           # It is possible no .erb files remain, after we remove already_existing
-          puts "No .erb files remain. Task will now exit."
-          return
+          puts "No .erb files remain."
         end
       else
         # Delete the current .haml
