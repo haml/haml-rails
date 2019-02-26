@@ -22,11 +22,15 @@ namespace :haml do
       puts "Some of your .html.erb files seem to already have .haml equivalents:"
       already_existing.map { |f| puts "\t#{f}" }
 
-      # Ask the user whether he/she would like to overwrite them.
-      begin
-        puts "Would you like to overwrite these .haml files? (y/n)"
-        should_overwrite = STDIN.gets.chomp.downcase[0]
-      end until ['y', 'n'].include?(should_overwrite)
+      if ENV.has_key?("HAML_RAILS_OVERWRITE_HAML") && (ENV["HAML_RAILS_OVERWRITE_HAML"] == "false")
+        should_overwrite = 'n'
+      else
+        # Ask the user whether he/she would like to overwrite them.
+        begin
+          puts "Would you like to overwrite these .haml files? (y/n)"
+          should_overwrite = STDIN.gets.chomp.downcase[0]
+        end until ['y', 'n'].include?(should_overwrite)
+      end
       puts '-'*80
 
       # If we are not overwriting, remove each already_existing from our erb_files list
@@ -57,15 +61,14 @@ namespace :haml do
     end
 
     puts '-'*80
-    begin
-      if ENV.has_key?("HAML_RAILS_DELETE_ERB")
-        should_delete = ENV["HAML_RAILS_DELETE_ERB"] == "true" ? "y" : "n"
-      else
+    if ENV.has_key?("HAML_RAILS_DELETE_ERB") && (ENV["HAML_RAILS_DELETE_ERB"] == "true")
+      should_delete = 'y'
+    else
+      begin
         puts 'Would you like to delete the original .erb files? (This is not recommended unless you are under version control.) (y/n)'
         should_delete = STDIN.gets.chomp.downcase[0]
-      end
-    end until ['y', 'n'].include?(should_delete)
-
+      end until ['y', 'n'].include?(should_delete)
+    end
     if should_delete == 'y'
       puts "Deleting original .erb files."
       File.delete(*erb_files)
