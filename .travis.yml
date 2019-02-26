@@ -17,7 +17,7 @@ gemfile:
 matrix:
   exclude:
     - rvm: 2.3.6
-      gemfile: gemfiles/rails_6.beta1.gemfile
+      gemfile: gemfiles/rails_6.beta2.gemfile
     - rvm: 2.4.3
-      gemfile: gemfiles/rails_6.beta1.gemfile
+      gemfile: gemfiles/rails_6.beta2.gemfile
 script: "bundle exec rake test"

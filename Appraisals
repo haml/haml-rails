@@ -22,6 +22,6 @@ appraise "rails_5_2" do
   gem "rails", "5.2"
 end
 
-appraise "rails_6.beta1" do
-  gem "rails", "6.0.0.beta1"
+appraise "rails_6.beta2" do
+  gem "rails", "6.0.0.beta2"
 end
