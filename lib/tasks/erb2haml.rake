@@ -10,6 +10,8 @@ namespace :haml do
       exit
     end
 
+    erb_files_to_convert = erb_files.dup
+
     haml_files_w_out_ext = haml_files.map { |f| f.gsub(/\.haml\z/, '') }
 
     # Get a list of all those erb files that already seem to have .haml equivalents
@@ -35,11 +37,11 @@ namespace :haml do
 
       # If we are not overwriting, remove each already_existing from our erb_files list
       if should_overwrite == 'n'
-        erb_files = erb_files - already_existing
+        erb_files_to_convert = erb_files - already_existing
 
-        if erb_files.empty?
+        if erb_files_to_convert.empty?
           # It is possible no .erb files remain, after we remove already_existing
-          puts "No .erb files remain."
+          puts "No .erb files to convert"
         end
       else
         # Delete the current .haml
@@ -47,7 +49,7 @@ namespace :haml do
       end
     end
 
-    erb_files.each do |file|
+    erb_files_to_convert.each do |file|
       puts "Generating HAML for #{file}..."
       `html2haml #{file} #{file.gsub(/\.erb\z/, '.haml')}`
     end
@@ -55,7 +57,7 @@ namespace :haml do
     puts '-'*80
 
     puts "HAML generated for the following files:"
-    erb_files.each do |file|
+    erb_files_to_convert.each do |file|
       puts "\t#{file}"
     end
 
