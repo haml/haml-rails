@@ -5,7 +5,7 @@ Haml-rails provides Haml generators for Rails 4. It also enables Haml as the tem
 
 To use it, add this line to your Gemfile:
 
-    gem "haml-rails", "~> 1.0"
+    gem "haml-rails", "~> 2.0"
 
 This ensures that:
 
