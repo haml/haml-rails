@@ -12,7 +12,6 @@ rvm:
 gemfile:
   - gemfiles/rails_5_2.gemfile
   - gemfiles/rails_5_1.gemfile
-  - gemfiles/rails_5_2.gemfile
   - gemfiles/rails_6.rc1.gemfile
 matrix:
   exclude:
