@@ -1,5 +1,5 @@
 # Haml-rails
-[![Build Status](https://travis-ci.org/indirect/haml-rails.svg)](https://travis-ci.org/indirect/haml-rails)
+[![Build Status](https://travis-ci.org/haml/haml-rails.svg)](https://travis-ci.org/haml/haml-rails)
 
 Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
