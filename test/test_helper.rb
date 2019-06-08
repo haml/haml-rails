@@ -10,6 +10,7 @@ Bundler.require(:default)
 
 class TestApp < Rails::Application
   config.root = File.dirname(__FILE__)
+  config.eager_load = false
 end
 
 module Rails
