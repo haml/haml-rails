@@ -27,24 +27,12 @@ def copy_routes
   FileUtils.cp File.expand_path(routes), File.expand_path(destination)
 end
 
-def path_prefix(name)
-  case name
-  when :rails
-    'rails/generators'
-  else
-    'generators'
-  end
-end
-
-{rails: ['scaffold', 'controller', 'mailer'], haml: ['scaffold', 'controller', 'mailer']}.each do |name, generators|
-  generators.each do |generator_name|
-    if name.to_s == 'rails' && generator_name.to_s == 'mailer'
-      require File.join(path_prefix(name), generator_name.to_s, "#{generator_name}_generator")
-    else
-      require File.join(path_prefix(name), name.to_s, generator_name.to_s, "#{generator_name}_generator")
-    end
-  end
-end
+require 'rails/generators/rails/scaffold/scaffold_generator'
+require 'rails/generators/rails/controller/controller_generator'
+require 'rails/generators/mailer/mailer_generator'
+require 'generators/haml/scaffold/scaffold_generator'
+require 'generators/haml/controller/controller_generator'
+require 'generators/haml/mailer/mailer_generator'
 
 # Remove tmp directory when test suite is completed
 MiniTest.after_run do
