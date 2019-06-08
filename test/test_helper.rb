@@ -1,8 +1,12 @@
 require 'rubygems'
 require 'minitest/autorun'
-require 'rails/all'
+require 'action_pack'
+require 'action_controller'
+require 'action_view'
+require 'rails'
 require 'rails/generators'
 require 'rails/generators/test_case'
+Bundler.require(:default)
 
 class TestApp < Rails::Application
   config.root = File.dirname(__FILE__)
