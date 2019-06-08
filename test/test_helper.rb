@@ -36,18 +36,15 @@ def path_prefix(name)
   end
 end
 
-def require_generators
-  {rails: ['scaffold', 'controller', 'mailer'], haml: ['scaffold', 'controller', 'mailer']}.each do |name, generators|
-    generators.each do |generator_name|
-      if name.to_s == 'rails' && generator_name.to_s == 'mailer'
-        require File.join(path_prefix(name), generator_name.to_s, "#{generator_name}_generator")
-      else
-        require File.join(path_prefix(name), name.to_s, generator_name.to_s, "#{generator_name}_generator")
-      end
+{rails: ['scaffold', 'controller', 'mailer'], haml: ['scaffold', 'controller', 'mailer']}.each do |name, generators|
+  generators.each do |generator_name|
+    if name.to_s == 'rails' && generator_name.to_s == 'mailer'
+      require File.join(path_prefix(name), generator_name.to_s, "#{generator_name}_generator")
+    else
+      require File.join(path_prefix(name), name.to_s, generator_name.to_s, "#{generator_name}_generator")
     end
   end
 end
-require_generators
 
 # Remove tmp directory when test suite is completed
 MiniTest.after_run do
