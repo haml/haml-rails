@@ -18,6 +18,8 @@ module Rails
   end
 end
 
+TestApp.initialize!
+
 # Call configure to load the settings from
 # Rails.application.config.generators to Rails::Generators
 Rails.application.load_generators
