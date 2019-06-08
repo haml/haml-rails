@@ -54,8 +54,6 @@ def require_generators(generator_list)
     end
   end
 end
-alias :require_generator :require_generators
-
 require_generators generator_list
 
 # Remove tmp directory when test suite is completed
