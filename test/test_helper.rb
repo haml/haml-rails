@@ -21,10 +21,6 @@ end
 
 TestApp.initialize!
 
-# Call configure to load the settings from
-# Rails.application.config.generators to Rails::Generators
-Rails.application.load_generators
-
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 module Haml
