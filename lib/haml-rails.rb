@@ -4,8 +4,6 @@ require 'haml/railtie'
 
 module Haml
   module Rails
-    class Engine < ::Rails::Engine
-    end
     class Railtie < ::Rails::Railtie
       config.app_generators.template_engine :haml
 
