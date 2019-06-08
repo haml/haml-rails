@@ -27,13 +27,6 @@ def copy_routes
   FileUtils.cp File.expand_path(routes), File.expand_path(destination)
 end
 
-require 'rails/generators/rails/scaffold/scaffold_generator'
-require 'rails/generators/rails/controller/controller_generator'
-require 'rails/generators/mailer/mailer_generator'
-require 'generators/haml/scaffold/scaffold_generator'
-require 'generators/haml/controller/controller_generator'
-require 'generators/haml/mailer/mailer_generator'
-
 # Remove tmp directory when test suite is completed
 MiniTest.after_run do
   tmp_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp'))

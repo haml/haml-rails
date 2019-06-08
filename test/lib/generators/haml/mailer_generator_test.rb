@@ -1,4 +1,6 @@
 require 'test_helper'
+require 'rails/generators/mailer/mailer_generator'
+require 'generators/haml/mailer/mailer_generator'
 
 class Haml::Generators::MailerGeneratorTest < Rails::Generators::TestCase
   destination File.join(Rails.root)
