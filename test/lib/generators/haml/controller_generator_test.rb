@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'lib/generators/haml/testing_helper'
 
 class Haml::Generators::ControllerGeneratorTest < Rails::Generators::TestCase
   destination Rails.root

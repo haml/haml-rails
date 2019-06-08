@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'lib/generators/haml/testing_helper'
 
 class Haml::Generators::ScaffoldGeneratorTest < Rails::Generators::TestCase
   destination File.join(Rails.root)
