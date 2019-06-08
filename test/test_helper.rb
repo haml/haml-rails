@@ -10,7 +10,7 @@ end
 
 module Rails
   def self.root
-    @root ||= File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp', 'rails'))
+    @root ||= Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp', 'rails')))
   end
 end
 
