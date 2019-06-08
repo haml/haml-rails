@@ -27,13 +27,6 @@ def copy_routes
   FileUtils.cp File.expand_path(routes), File.expand_path(destination)
 end
 
-def generator_list
-  {
-    :rails        => ['scaffold', 'controller', 'mailer'],
-    :haml         => ['scaffold', 'controller', 'mailer']
-  }
-end
-
 def path_prefix(name)
   case name
   when :rails
@@ -43,8 +36,8 @@ def path_prefix(name)
   end
 end
 
-def require_generators(generator_list)
-  generator_list.each do |name, generators|
+def require_generators
+  {rails: ['scaffold', 'controller', 'mailer'], haml: ['scaffold', 'controller', 'mailer']}.each do |name, generators|
     generators.each do |generator_name|
       if name.to_s == 'rails' && generator_name.to_s == 'mailer'
         require File.join(path_prefix(name), generator_name.to_s, "#{generator_name}_generator")
@@ -54,7 +47,7 @@ def require_generators(generator_list)
     end
   end
 end
-require_generators generator_list
+require_generators
 
 # Remove tmp directory when test suite is completed
 MiniTest.after_run do
