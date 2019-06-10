@@ -1,7 +1,7 @@
 # Haml-rails
 [![Build Status](https://travis-ci.org/haml/haml-rails.svg)](https://travis-ci.org/haml/haml-rails)
 
-Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
+Haml-rails provides Haml generators for Rails 5. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
 To use it, add this line to your Gemfile:
 
@@ -47,9 +47,13 @@ false will also not prompt, however, will leave the .erb files intact.
 
 ### Older versions of Rails
 
-The current version of Haml-rails requires 4.0.1 or later.
+The current version of Haml-rails requires Rails 5.1 or later.
 
-Haml-rails version 0.4 is the last version to support Rails 3. To use it, add this line to your Gemfile:
+Haml-rails version 1.0.0 is the last version to support Rails 4. To use it, add this line to your Gemfile:
+
+    gem "haml-rails", "~> 1.0.0"
+
+For Rails 3, use haml-rails version 0.4 by adding this line to your Gemfile instead:
 
     gem "haml-rails", "~> 0.4.0"
 
