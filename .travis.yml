@@ -4,9 +4,9 @@ before_install:
   - "gem update --system"
   - "gem install bundler"
 rvm:
-  - 2.6.4
-  - 2.5.6
-  - 2.4.7
+  - 2.6.5
+  - 2.5.7
+  - 2.4.9
   - 2.3.8
   - jruby-9.2.8.0
 gemfile:
@@ -17,6 +17,6 @@ matrix:
   exclude:
     - rvm: 2.3.8
       gemfile: gemfiles/rails_6.gemfile
-    - rvm: 2.4.7
+    - rvm: 2.4.9
       gemfile: gemfiles/rails_6.gemfile
 script: "bundle exec rake test"
