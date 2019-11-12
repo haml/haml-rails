@@ -1,11 +1,11 @@
 # Haml-rails
-[![Build Status](https://travis-ci.org/indirect/haml-rails.svg)](https://travis-ci.org/indirect/haml-rails)
+[![Build Status](https://travis-ci.org/haml/haml-rails.svg)](https://travis-ci.org/haml/haml-rails)
 
-Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
+Haml-rails provides Haml generators for Rails 5. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
 To use it, add this line to your Gemfile:
 
-    gem "haml-rails", "~> 0.9"
+    gem "haml-rails", "~> 2.0"
 
 This ensures that:
 
@@ -31,19 +31,29 @@ start using `app/views/layouts/application.html.haml` instead.
 
 If you want to convert all of your .erb views into .haml, you can do so using the following command:
 
-    $ rake haml:erb2haml
+    $ rails haml:erb2haml
 
 If you already have .haml files for one or more of the .erb files, the rake task will give you the option of either
 replacing these .haml files or leaving them in place.
 
 Once the task is complete, you will have the option of deleting the original .erb files. Unless you are under
-version control, it is recommended that you decline this option.
+version control, it is recommended that you decline this option.  If you are running in a script, you can use
+an environment variable to answer this question.
+
+    $ HAML_RAILS_DELETE_ERB=true rails haml:erb2haml
+
+Running the above will not prompt for the question and will delete the original .erb files.  Setting this value to
+false will also not prompt, however, will leave the .erb files intact.
 
 ### Older versions of Rails
 
-The current version of Haml-rails requires 4.0.1 or later.
+The current version of Haml-rails requires Rails 5.1 or later.
 
-Haml-rails version 0.4 is the last version to support Rails 3. To use it, add this line to your Gemfile:
+Haml-rails version 1.0.0 is the last version to support Rails 4. To use it, add this line to your Gemfile:
+
+    gem "haml-rails", "~> 1.0.0"
+
+For Rails 3, use haml-rails version 0.4 by adding this line to your Gemfile instead:
 
     gem "haml-rails", "~> 0.4.0"
 

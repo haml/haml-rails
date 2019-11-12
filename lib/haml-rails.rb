@@ -4,8 +4,6 @@ require 'haml/railtie'
 
 module Haml
   module Rails
-    class Engine < ::Rails::Engine
-    end
     class Railtie < ::Rails::Railtie
       config.app_generators.template_engine :haml
 
@@ -46,7 +44,13 @@ module Haml
       # provided directly by railties 3.2..4.1 but was dropped in 4.2.
       if Gem::Requirement.new(">= 4.2").satisfied_by?(Gem::Version.new(::Rails.version))
         initializer 'haml_rails.configure_source_annotation' do
-          SourceAnnotationExtractor::Annotation.register_extensions('haml') do |tag|
+          annotation_class = if ::Rails::VERSION::STRING >= '6.0'
+            require 'rails/source_annotation_extractor'
+            ::Rails::SourceAnnotationExtractor::Annotation
+          else
+            ::SourceAnnotationExtractor::Annotation
+          end
+          annotation_class.register_extensions('haml') do |tag|
             /\s*-#\s*(#{tag}):?\s*(.*)/
           end
         end

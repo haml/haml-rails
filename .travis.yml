@@ -1,39 +1,22 @@
-sudo: false
 language: ruby
 cache: bundler
-before_install: "gem install bundler"
+before_install:
+  - "gem update --system"
+  - "gem install bundler"
 rvm:
-  - 2.4.1
-  - 2.3.1
-  - 2.2.5
-  - 2.1
-  - 2.0
-  - 1.9.3
-  - jruby-19mode
+  - 2.6.5
+  - 2.5.7
+  - 2.4.9
+  - 2.3.8
+  - jruby-9.2.8.0
 gemfile:
+  - gemfiles/rails_5_2.gemfile
   - gemfiles/rails_5_1.gemfile
-  - gemfiles/rails_5_0.gemfile
-  - gemfiles/rails_4_2.gemfile
-  - gemfiles/rails_4_1.gemfile
-  - gemfiles/rails_4_0.gemfile
+  - gemfiles/rails_6.gemfile
 matrix:
   exclude:
-    - rvm: 2.1
-      gemfile: gemfiles/rails_5_1.gemfile
-    - rvm: 2.1
-      gemfile: gemfiles/rails_5_0.gemfile
-    - rvm: 2.0
-      gemfile: gemfiles/rails_5_1.gemfile
-    - rvm: 2.0
-      gemfile: gemfiles/rails_5_0.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails_5_1.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails_5_0.gemfile
-    - rvm: 1.9.3
-      gemfile: gemfiles/rails_4_1.gemfile
-    - rvm: jruby-19mode
-      gemfile: gemfiles/rails_5_1.gemfile
-    - rvm: jruby-19mode
-      gemfile: gemfiles/rails_5_0.gemfile
+    - rvm: 2.3.8
+      gemfile: gemfiles/rails_6.gemfile
+    - rvm: 2.4.9
+      gemfile: gemfiles/rails_6.gemfile
 script: "bundle exec rake test"
