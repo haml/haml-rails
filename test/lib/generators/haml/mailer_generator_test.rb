@@ -65,4 +65,23 @@ class Haml::Generators::MailerGeneratorTest < Rails::Generators::TestCase
       end
     end
   end
+
+  test 'suffix is not duplicated' do
+    if ::Rails.version.to_s >= '4.2'
+      run_generator ['notifier_mailer', 'foo', 'bar', '--template-engine', 'haml']
+
+      assert_no_file 'app/views/notifier_mailer_mailer/'
+      assert_file 'app/views/notifier_mailer/'
+
+      assert_no_file 'app/views/notifier_mailer_mailer/foo.text.haml'
+      assert_file 'app/views/notifier_mailer/foo.text.haml'
+      assert_no_file 'app/views/notifier_mailer_mailer/foo.html.haml'
+      assert_file 'app/views/notifier_mailer/foo.html.haml'
+
+      assert_no_file 'app/views/notifier_mailer_mailer/bar.text.haml'
+      assert_file 'app/views/notifier_mailer/bar.text.haml'
+      assert_no_file 'app/views/notifier_mailer_mailer/bar.html.haml'
+      assert_file 'app/views/notifier_mailer/bar.html.haml'
+    end
+  end
 end
