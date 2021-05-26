@@ -10,6 +10,8 @@ namespace :haml do
       exit
     end
 
+    erb_files_to_convert = erb_files.dup
+
     haml_files_w_out_ext = haml_files.map { |f| f.gsub(/\.haml\z/, '') }
 
     # Get a list of all those erb files that already seem to have .haml equivalents
@@ -22,21 +24,24 @@ namespace :haml do
       puts "Some of your .html.erb files seem to already have .haml equivalents:"
       already_existing.map { |f| puts "\t#{f}" }
 
-      # Ask the user whether he/she would like to overwrite them.
-      begin
-        puts "Would you like to overwrite these .haml files? (y/n)"
-        should_overwrite = STDIN.gets.chomp.downcase[0]
-      end until ['y', 'n'].include?(should_overwrite)
+      if ENV.has_key?("HAML_RAILS_OVERWRITE_HAML") && (ENV["HAML_RAILS_OVERWRITE_HAML"] == "false")
+        should_overwrite = 'n'
+      else
+        # Ask the user whether he/she would like to overwrite them.
+        begin
+          puts "Would you like to overwrite these .haml files? (y/n)"
+          should_overwrite = STDIN.gets.chomp.downcase[0]
+        end until ['y', 'n'].include?(should_overwrite)
+      end
       puts '-'*80
 
       # If we are not overwriting, remove each already_existing from our erb_files list
       if should_overwrite == 'n'
-        erb_files = erb_files - already_existing
+        erb_files_to_convert = erb_files - already_existing
 
-        if erb_files.empty?
+        if erb_files_to_convert.empty?
           # It is possible no .erb files remain, after we remove already_existing
-          puts "No .erb files remain. Task will now exit."
-          return
+          puts "No .erb files to convert"
         end
       else
         # Delete the current .haml
@@ -44,7 +49,7 @@ namespace :haml do
       end
     end
 
-    erb_files.each do |file|
+    erb_files_to_convert.each do |file|
       puts "Generating HAML for #{file}..."
       `html2haml #{file} #{file.gsub(/\.erb\z/, '.haml')}`
     end
@@ -52,20 +57,19 @@ namespace :haml do
     puts '-'*80
 
     puts "HAML generated for the following files:"
-    erb_files.each do |file|
+    erb_files_to_convert.each do |file|
       puts "\t#{file}"
     end
 
     puts '-'*80
-    begin
-      if ENV.has_key?("HAML_RAILS_DELETE_ERB")
-        should_delete = ENV["HAML_RAILS_DELETE_ERB"] == "true" ? "y" : "n"
-      else
+    if ENV.has_key?("HAML_RAILS_DELETE_ERB") && (ENV["HAML_RAILS_DELETE_ERB"] == "true")
+      should_delete = 'y'
+    else
+      begin
         puts 'Would you like to delete the original .erb files? (This is not recommended unless you are under version control.) (y/n)'
         should_delete = STDIN.gets.chomp.downcase[0]
-      end
-    end until ['y', 'n'].include?(should_delete)
-
+      end until ['y', 'n'].include?(should_delete)
+    end
     if should_delete == 'y'
       puts "Deleting original .erb files."
       File.delete(*erb_files)
