@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         ruby-version:
-          - jruby-9.2.9.0
+          - jruby
           - 2.7
           - 3.0
           - 3.1
