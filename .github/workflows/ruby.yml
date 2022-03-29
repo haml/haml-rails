@@ -44,6 +44,10 @@ jobs:
           - ruby-version: 2.6
             gemfile: rails_5_1
 
+        exclude:
+          - ruby-version: jruby
+            gemfile: rails_7_0
+
     env: # $BUNDLE_GEMFILE must be set at the job level, so it is set for all steps
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
     steps:
