@@ -5,12 +5,11 @@ module Haml
     class ControllerGenerator < Erb::Generators::ControllerGenerator
       source_root File.expand_path("../templates", __FILE__)
 
-    protected
+      protected
 
       def handler
         :haml
       end
-
     end
   end
 end

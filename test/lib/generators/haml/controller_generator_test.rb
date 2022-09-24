@@ -12,8 +12,8 @@ class Haml::Generators::ControllerGeneratorTest < Rails::Generators::TestCase
   arguments %w(Account foo bar --template-engine haml)
 
   test "should invoke haml engine" do
-    run_generator 
+    run_generator
     assert_file "app/views/account/foo.html.haml"
     assert_file "app/views/account/bar.html.haml"
-  end 
+  end
 end

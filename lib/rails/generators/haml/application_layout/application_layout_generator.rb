@@ -4,7 +4,6 @@ require 'shellwords'
 module Haml
   module Generators
     class ApplicationLayoutGenerator < ::Rails::Generators::Base
-
       HTML_LAYOUT_PATH = 'app/views/layouts/application.html.erb'
       HAML_LAYOUT_PATH = 'app/views/layouts/application.html.haml'
 
@@ -27,9 +26,7 @@ module Haml
         else
           puts "Error! There is no file named app/views/layouts/application.html.erb."
         end
-
       end
-
     end
   end
 end

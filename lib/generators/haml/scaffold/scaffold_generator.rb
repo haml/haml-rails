@@ -21,7 +21,7 @@ module Haml
         end
       end
 
-    protected
+      protected
 
       def available_views
         %w(index edit show new)
@@ -30,7 +30,6 @@ module Haml
       def handler
         :haml
       end
-
     end
   end
 end
