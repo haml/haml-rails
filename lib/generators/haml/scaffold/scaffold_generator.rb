@@ -21,7 +21,7 @@ module Haml
         end
       end
 
-      protected
+      private
 
       def available_views
         %w(index edit show new)

@@ -5,7 +5,7 @@ module Haml
     class MailerGenerator < Erb::Generators::MailerGenerator
       source_root File.expand_path("../templates", __FILE__)
 
-      protected
+      private
 
       def handler
         :haml
