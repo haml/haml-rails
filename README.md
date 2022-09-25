@@ -1,7 +1,7 @@
 # Haml-rails
 [![Build Status](https://travis-ci.org/haml/haml-rails.svg)](https://travis-ci.org/haml/haml-rails)
 
-Haml-rails provides Haml generators for Rails 5. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
+Haml-rails provides Haml generators for Rails 5, 6, and 7. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
 To use it, add this line to your Gemfile:
 
