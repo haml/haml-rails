@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'bundler/setup'
 require 'minitest/autorun'
 require 'action_pack'
 require 'action_controller'
