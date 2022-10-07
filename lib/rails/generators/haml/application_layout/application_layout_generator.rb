@@ -17,8 +17,12 @@ module Haml
         if File.exist?(app_layout_from)
           if !File.exist?(app_layout_to)
             `html2haml #{app_layout_from.shellescape} #{app_layout_to.shellescape}`
-            puts "Success! app/views/layouts/application.html.haml is created.\n" \
-                 "Please remove the erb file: app/views/layouts/application.html.erb"
+            if $?.success?
+              puts "Success! app/views/layouts/application.html.haml is created.\n" \
+                   "Please remove the erb file: app/views/layouts/application.html.erb"
+            else
+              puts "Error! Failed to execute html2haml command."
+            end
           else
             puts "Error! There is a file named app/views/layouts/application.html.haml already."
           end
