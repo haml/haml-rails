@@ -23,6 +23,10 @@ to `app/views/layouts/application.html.haml` using this command:
 
     $ rails generate haml:application_layout convert
 
+This requires the html2haml gem and you can install it locally:
+
+    gem install html2haml
+
 After the application layout file is converted successfully,
 make sure to delete `app/views/layouts/application.html.erb`, so Rails can
 start using `app/views/layouts/application.html.haml` instead.
