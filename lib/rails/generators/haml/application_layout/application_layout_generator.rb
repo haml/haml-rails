@@ -15,7 +15,6 @@ module Haml
         app_layout_to   = ::Rails.root.join(HAML_LAYOUT_PATH).to_s
 
         if File.exist?(app_layout_from)
-
           if !File.exist?(app_layout_to)
             `html2haml #{app_layout_from.shellescape} #{app_layout_to.shellescape}`
             puts "Success! app/views/layouts/application.html.haml is created.\n" \
