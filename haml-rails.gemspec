@@ -12,6 +12,8 @@ Gem::Specification.new do |s|
   s.description = "Haml-rails provides Haml generators for Rails 5. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah."
   s.licenses    = ["MIT"]
 
+  s.metadata    = { "rubygems_mfa_required" => "true" }
+
   s.required_rubygems_version = ">= 2.0.0"
   s.required_ruby_version     = ">= 2.3.0"
 
