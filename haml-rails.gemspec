@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "activesupport", [">= 5.1"]
   s.add_dependency "actionpack",    [">= 5.1"]
   s.add_dependency "railties",      [">= 5.1"]
-  
+
   s.add_development_dependency "html2haml", [">= 1.0.1"]
   s.add_development_dependency "rails",   [">= 5.1"]
   s.add_development_dependency "bundler"
