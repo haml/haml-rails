@@ -19,6 +19,7 @@ jobs:
           - 2.7
           - jruby
         gemfile:
+          - rails_7_1
           - rails_7_0
           - rails_6_1
           - rails_6_0
@@ -39,6 +40,8 @@ jobs:
             gemfile: rails_5_1
 
         exclude:
+          - ruby-version: jruby
+            gemfile: rails_7_1
           - ruby-version: jruby
             gemfile: rails_7_0
           - ruby-version: 3.2
