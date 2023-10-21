@@ -42,7 +42,7 @@ end
 ::Rails::Generators::TestCase.include Haml::Rails::GeneratorTestHelpers
 
 # Remove tmp directory when test suite is completed
-MiniTest.after_run do
+Minitest.after_run do
   tmp_dir = File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp'))
   FileUtils.rm_r(tmp_dir)
 end
