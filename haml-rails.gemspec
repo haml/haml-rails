@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "rails",   [">= 5.1"]
   s.add_development_dependency "bundler"
   s.add_development_dependency "rake"
-  s.add_development_dependency 'appraisal'
 
   s.files        = `git ls-files`.split("\n")
   s.executables  = `git ls-files`.split("\n").select{|f| f =~ /^bin/}
