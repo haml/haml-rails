@@ -4,3 +4,9 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'html2haml'
+
+if ENV['RAILS_VERSION']
+  gem 'rails', "~> #{ENV['RAILS_VERSION']}.0"
+else
+  gem 'rails'
+end
