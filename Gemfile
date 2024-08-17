@@ -10,3 +10,10 @@ if ENV['RAILS_VERSION']
 else
   gem 'rails'
 end
+
+if ENV['RUBY_VERSION'] >= '3.3'
+  gem 'mutex_m'
+  gem 'base64'
+  gem 'bigdecimal'
+  gem 'drb'
+end

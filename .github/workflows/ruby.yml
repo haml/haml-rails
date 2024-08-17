@@ -60,6 +60,7 @@ jobs:
             rails-version: '7.2'
 
     env:
+      RUBY_VERSION: ${{ matrix.ruby-version }}
       RAILS_VERSION: ${{ matrix.rails-version }}
     steps:
     - uses: actions/checkout@v4
