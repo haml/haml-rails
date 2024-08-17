@@ -21,9 +21,14 @@ jobs:
           - '7.1'
           - '7.0'
           - '6.1'
-          - '6.0'
 
         include:
+          - ruby-version: '3.1'
+            rails-version: '6.0'
+
+          - ruby-version: '3.0'
+            rails-version: '6.0'
+
           - ruby-version: '2.7'
             rails-version: '7.1'
           - ruby-version: '2.7'
@@ -48,12 +53,6 @@ jobs:
 
           - ruby-version: jruby
             rails-version: '6.1'
-
-        exclude:
-          - ruby-version: '3.3'
-            rails-version: '6.0'
-          - ruby-version: '3.2'
-            rails-version: '6.0'
 
     env:
       RAILS_VERSION: ${{ matrix.rails-version }}
