@@ -10,14 +10,8 @@ require 'rails/generators/test_case'
 Bundler.require(:default)
 
 class TestApp < Rails::Application
-  config.root = File.dirname(__FILE__)
+  config.root = Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp', 'rails')))
   config.eager_load = false
-end
-
-module Rails
-  def self.root
-    @root ||= Pathname.new(File.expand_path(File.join(File.dirname(__FILE__), '..', 'tmp', 'rails')))
-  end
 end
 
 TestApp.initialize!
