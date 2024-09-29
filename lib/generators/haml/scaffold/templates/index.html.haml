@@ -16,10 +16,10 @@
 <% for attribute in attributes -%>
         %td= <%= singular_table_name %>.<%= attribute.name %>
 <% end -%>
-        %td= link_to 'Show', <%= singular_table_name %>
-        %td= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
-        %td= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', <%= show_helper(singular_table_name, type: :path) %>
+        %td= link_to 'Edit', <%= edit_helper(singular_table_name, type: :path) %>
+        %td= link_to 'Destroy', <%= show_helper(singular_table_name, type: :path) %>, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New <%= human_name %>', new_<%= singular_table_name %>_path
+= link_to 'New <%= human_name %>', <%= new_helper(type: :path) %>
