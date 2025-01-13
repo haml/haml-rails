@@ -62,6 +62,8 @@ jobs:
             rails-version: '6.1'
 
         exclude:
+          - ruby-version: '3.1'
+            rails-version: '8.0'
 
     env:
       RUBY_VERSION: ${{ matrix.ruby-version }}

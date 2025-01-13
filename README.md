@@ -2,7 +2,7 @@
 [![Gem Version](https://badge.fury.io/rb/haml-rails.svg)](https://rubygems.org/gems/haml-rails)
 [![Ruby](https://github.com/haml/haml-rails/actions/workflows/ruby.yml/badge.svg)](https://github.com/haml/haml-rails/actions/workflows/ruby.yml)
 
-Haml-rails provides Haml generators for Rails 5, 6, and 7. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
+Haml-rails provides Haml generators for Rails 5, 6, 7, and 8. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
 
 To use it, add this line to your Gemfile:
 
