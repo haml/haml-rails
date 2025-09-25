@@ -11,7 +11,8 @@ else
   gem 'rails'
 end
 
-if (ENV['RUBY_VERSION'] || Ruby::VERSION) >= '3.3'
+gem 'debug'
+if (ENV['RUBY_VERSION'] || RUBY_VERSION) >= '3.3'
   gem 'mutex_m'
   gem 'base64'
   gem 'bigdecimal'
