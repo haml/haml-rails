@@ -11,7 +11,10 @@ else
   gem 'rails'
 end
 
-gem 'debug'
+if RUBY_ENGINE == 'ruby'
+  gem 'debug'
+end
+
 if (ENV['RUBY_VERSION'] || RUBY_VERSION) >= '3.3'
   gem 'mutex_m'
   gem 'base64'
