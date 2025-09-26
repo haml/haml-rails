@@ -16,6 +16,9 @@ class TestApp < Rails::Application
   config.eager_load = false
 end
 
+require 'action_controller/railtie'
+require 'action_view/railtie'
+
 TestApp.initialize!
 
 Rails.application.routes.draw do
