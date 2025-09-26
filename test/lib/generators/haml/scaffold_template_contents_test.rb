@@ -16,7 +16,11 @@ class Haml::Generators::ScaffoldTemplateContentsTest < Rails::Generators::TestCa
 
       controller = PeopleController.new
       controller.set_request!(ActionDispatch::Request.empty)
-      controller.lookup_context.append_view_paths([Rails.root.join('app/views')])
+      if controller.lookup_context.respond_to? :append_view_paths
+        controller.lookup_context.append_view_paths([Rails.root.join('app/views')])
+      else
+        controller.lookup_context.view_paths << Rails.root.join('app/views')
+      end
       controller.instance_variable_set :@people, []
       controller.instance_variable_set :@person, Person.new(1, 'Person 1')
 
