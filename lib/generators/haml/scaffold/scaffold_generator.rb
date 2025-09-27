@@ -7,8 +7,12 @@ module Haml
 
       argument :attributes, type: :array, default: [], banner: "field:type field:type"
 
+      hook_for :form_builder, :as => :scaffold
+
       def copy_view_files
         available_views.each do |view|
+          next if (view == '_form') && !options[:form_builder].nil?
+
           template_filename = find_template_for_rails_version view
           filename = filename_with_extensions view
 
@@ -18,20 +22,10 @@ module Haml
         template find_template_for_rails_version('partial'), File.join('app/views', controller_file_path, "_#{singular_name}.html.haml")
       end
 
-      hook_for :form_builder, :as => :scaffold
-
-      def copy_form_file
-        if options[:form_builder].nil?
-          template_filename = find_template_for_rails_version "_form"
-          filename = filename_with_extensions "_form"
-          template template_filename, File.join("app/views", controller_file_path, filename)
-        end
-      end
-
       private
 
       def available_views
-        %w(index edit show new)
+        %w(index edit show new _form)
       end
 
       def handler
