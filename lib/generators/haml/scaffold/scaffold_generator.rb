@@ -19,7 +19,9 @@ module Haml
           template template_filename, File.join('app/views', controller_file_path, filename)
         end
 
-        template find_template_for_rails_version('partial'), File.join('app/views', controller_file_path, "_#{singular_name}.html.haml")
+        if ::Rails::VERSION::MAJOR >= 7
+          template find_template_for_rails_version('partial'), File.join('app/views', controller_file_path, "_#{singular_name}.html.haml")
+        end
       end
 
       private
