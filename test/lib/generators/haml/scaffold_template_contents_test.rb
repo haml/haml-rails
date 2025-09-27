@@ -35,7 +35,13 @@ class Haml::Generators::ScaffoldTemplateContentsTest < Rails::Generators::TestCa
     view_context.lookup_context.handlers = [:erb]
     erb_html = view_context.render(template: "people/#{view}")
 
-    assert_equal strip_whitespace(erb_html), strip_whitespace(html), "#{view} template result differs from the ERB version"
+    assert_equal scrub(erb_html), scrub(html), "#{view} template result differs from the ERB version"
+  end
+
+  def scrub(html)
+    html = strip_whitespace html
+    strip_authenticity_token! html
+    html
   end
 
   def strip_whitespace(html)
@@ -45,6 +51,10 @@ class Haml::Generators::ScaffoldTemplateContentsTest < Rails::Generators::TestCa
       text_node.content = text_node.text.strip
     end
     html_doc.to_html
+  end
+
+  def strip_authenticity_token!(html)
+    html.sub!(/(<input type="hidden" name="authenticity_token" value=").*?"/, '\1"')
   end
 
   test 'should generate a set of templates that are 100% compatible with the original ERB templates' do
