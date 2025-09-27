@@ -1,6 +1,7 @@
 require 'test_helper'
 require 'rails/generators/rails/scaffold/scaffold_generator'
 require 'generators/haml/scaffold/scaffold_generator'
+require 'action_controller/test_case'
 
 class Haml::Generators::ScaffoldTemplateContentsTest < Rails::Generators::TestCase
   destination File.join(Rails.root)
@@ -16,6 +17,8 @@ class Haml::Generators::ScaffoldTemplateContentsTest < Rails::Generators::TestCa
 
       controller = PeopleController.new
       controller.set_request!(ActionDispatch::Request.empty)
+      controller.request.session = ActionController::TestSession.new
+
       if controller.lookup_context.respond_to? :append_view_paths
         controller.lookup_context.append_view_paths([Rails.root.join('app/views')])
       else
