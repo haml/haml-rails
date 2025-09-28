@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["andre@arko.net"]
   s.homepage    = "https://github.com/haml/haml-rails"
   s.summary     = "let your Gemfile do the configuring"
-  s.description = "Haml-rails provides Haml generators for Rails 5. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah."
+  s.description = "Haml-rails provides Haml generators for Rails 5.1 and above. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah."
   s.licenses    = ["MIT"]
 
   s.metadata    = { "rubygems_mfa_required" => "true" }
