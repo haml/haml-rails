@@ -5,6 +5,7 @@ require 'minitest/autorun'
 require 'action_pack'
 require 'action_controller'
 require 'action_view'
+require 'active_model'
 require 'rails'
 require 'rails/generators'
 require 'rails/generators/test_case'
@@ -15,7 +16,14 @@ class TestApp < Rails::Application
   config.eager_load = false
 end
 
+require 'action_controller/railtie'
+require 'action_view/railtie'
+
 TestApp.initialize!
+
+Rails.application.routes.draw do
+  resources :people
+end
 
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
@@ -35,6 +43,23 @@ module Haml
 end
 
 ::Rails::Generators::TestCase.include Haml::Rails::GeneratorTestHelpers
+
+class Person
+  include ActiveModel::Model
+
+  attr_accessor :id, :name
+
+  def initialize(id, name)
+    @id, @name = id, name
+  end
+
+  def to_param
+    {id: @id}
+  end
+end
+
+class ApplicationController < ActionController::Base
+end
 
 # Remove tmp directory when test suite is completed
 Minitest.after_run do

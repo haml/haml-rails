@@ -1,0 +1,10 @@
+- content_for :title, "New <%= human_name.downcase %>"
+
+%h1 New <%= human_name.downcase %>
+
+= render "form", <%= singular_table_name %>: @<%= singular_table_name %>
+
+%br
+
+%div
+  = link_to "Back to <%= human_name.pluralize.downcase %>", <%= index_helper(type: :path) %>
