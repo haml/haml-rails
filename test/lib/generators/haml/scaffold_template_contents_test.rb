@@ -55,6 +55,7 @@ class Haml::Generators::ScaffoldTemplateContentsTest < Rails::Generators::TestCa
 
   def strip_authenticity_token!(html)
     html.sub!(/(<input type="hidden" name="authenticity_token" value=").*?"/, '\1"')
+    html.sub!(/(<input autocomplete="off" name="authenticity_token" type="hidden" value=").*?"/, '\1"')
   end
 
   test 'should generate a set of templates that are 100% compatible with the original ERB templates' do
