@@ -6,7 +6,7 @@ Haml-rails provides Haml generators for Rails 5, 6, 7, and 8. It also enables Ha
 
 To use it, add this line to your Gemfile:
 
-    gem "haml-rails", "~> 2.0"
+    gem "haml-rails"
 
 This ensures that:
 
