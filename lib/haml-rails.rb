@@ -31,7 +31,13 @@ module Haml
               else
                 # will only apply if Rails 4, which includes 'action_view/dependency_tracker'
                 require 'action_view/dependency_tracker'
-                ActionView::DependencyTracker.register_tracker :haml, ActionView::DependencyTracker::ERBTracker
+                tracker = if defined?(ActionView::DependencyTracker::RubyTracker)
+                            # Rails 8.1+ RubyTracker compiles templates to Ruby before parsing
+                            ActionView::DependencyTracker::RubyTracker
+                          else
+                            ActionView::DependencyTracker::ERBTracker
+                          end
+                ActionView::DependencyTracker.register_tracker :haml, tracker
                 ActionView::Base.cache_template_loading = false if ::Rails.env.development?
               end
             rescue
