@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'haml-rails'
+
+system `rails generate haml:application_layout convert`
+
+system `rake haml:erb2haml`
