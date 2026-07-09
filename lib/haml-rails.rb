@@ -31,8 +31,11 @@ module Haml
               else
                 # will only apply if Rails 4, which includes 'action_view/dependency_tracker'
                 require 'action_view/dependency_tracker'
+                # RubyTracker (available since Rails 7.2) compiles the template
+                # to Ruby via its handler and parses that, so it detects render
+                # calls in Haml. Rails 8.1's ERBTracker only scans ERB `<% %>`
+                # tags and no longer sees Haml's `= render`.
                 tracker = if defined?(ActionView::DependencyTracker::RubyTracker)
-                            # Rails 8.1+ RubyTracker compiles templates to Ruby before parsing
                             ActionView::DependencyTracker::RubyTracker
                           else
                             ActionView::DependencyTracker::ERBTracker
